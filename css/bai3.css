@@ -1,0 +1,93 @@
+body {
+  background: #323641;
+}
+.animated-mail {
+  width: 200px;
+  height: 150px;
+  position: absolute;
+  top: calc(50% - 75px);
+  left: calc(50% - 100px);
+  transition: height 0.3s;
+  cursor: pointer;
+}
+.back {
+  position: absolute;
+  bottom: 0;
+  width: 200px;
+  height: 100px;
+  background: #cf4a43;
+}
+.front {
+  width: 0;
+  height: 0;
+  border-left: 100px solid transparent;
+  border-right: 100px solid #e95f55;
+  border-bottom: 50px solid #e95f55;
+  border-top: 50px solid transparent;
+  position: absolute;
+  bottom: 0;
+}
+.front::before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 102px solid #e15349;
+  border-right: 102px solid transparent;
+  top: -50px;
+  left: -100px;
+}
+.open {
+  width: 0;
+  height: 0;
+  border-left: 101px solid transparent;
+  border-right: 100px solid transparent;
+  border-top: 50px solid #cf4a43;
+  position: absolute;
+  bottom: 50px;
+  transform-origin: top;
+  transition: all 0.5s;
+  z-index: 1;
+  transition-delay: 0.4s;
+}
+.shadow {
+  position: absolute;
+  top: 200px;
+  left: -80px;
+  width: 360px;
+  height: 30px;
+  background: radial-gradient(
+    rgb(0, 0, 0, 0.5),
+    rgb(0, 0, 0, 0),
+    rgb(0, 0, 0, 0)
+  );
+  transition: transform 0.3s;
+}
+.letter {
+  width: 160px;
+  height: 60px;
+  background: #fff;
+  position: absolute;
+  left: calc(50% - 80px);
+  bottom: 0;
+  transition: all 1s ease;
+}
+.animated-mail:hover > .letter {
+  transform: translateY(-20px);
+  /* top: 140px; */
+  height: 160px;
+}
+.animated-mail:hover > .open {
+  transform: rotateX(180deg);
+  z-index: 0;
+  transition-delay: 0s;
+  transition: z-index 0s;
+}
+.animated-mail:hover {
+  height: 200px;
+}
+.animated-mail:hover > .shadow {
+  transform: scale(0.7);
+}

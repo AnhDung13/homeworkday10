@@ -1,0 +1,75 @@
+body {
+  background: #05a8f5;
+  overflow: hidden;
+}
+html {
+  font-family: sans-serif;
+}
+.burgur-menu {
+  width: 100px;
+  position: relative;
+  height: 100px;
+}
+.nav-wrap {
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 100px;
+  top: 0;
+  left: 0;
+  box-shadow: #4c4c4c 1px 1px 15px;
+  transition-property: width, height;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  border-bottom-right-radius: 100%;
+}
+.burgur-menu > label {
+  position: absolute;
+  font-size: 2em;
+  z-index: 1;
+  color: #05a8f5;
+  left: 20%;
+  top: 15%;
+  cursor: pointer;
+  transition: 0.2s ease-in-out;
+}
+.burgur-menu .open {
+  visibility: visible;
+  opacity: 1;
+}
+.burgur-menu .close {
+  visibility: hidden;
+  opacity: 0;
+}
+input:checked ~ .nav-wrap {
+  width: 5000px;
+  height: 5000px;
+}
+input:checked ~ .nav-wrap > * {
+  visibility: visible;
+  opacity: 1;
+  transition-delay: 0s;
+}
+input:checked ~ .open {
+  animation: closing 0.2s linear;
+  visibility: hidden;
+  opacity: 0;
+}
+input:checked ~ .close {
+  animation: closing 0.2s linear;
+  visibility: visible;
+  opacity: 1;
+}
+.nav {
+  font-weight: bold;
+  color: #05a8f5;
+  padding-left: 50px;
+  margin-top: 80px;
+  visibility: hidden;
+  opacity: 0;
+  transition-delay: 0.5s;
+}
+.nav li {
+  margin-bottom: 40px;
+  display: block;
+}
