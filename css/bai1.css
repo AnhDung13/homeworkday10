@@ -6,9 +6,9 @@ html {
   font-family: sans-serif;
 }
 .burgur-menu {
-  width: 100px;
+  width: 100vw;
+  height: 100vh;
   position: relative;
-  height: 100px;
 }
 .nav-wrap {
   position: absolute;
@@ -23,15 +23,15 @@ html {
   transition-timing-function: ease-in-out;
   border-bottom-right-radius: 100%;
 }
-.burgur-menu > label {
+.burgur-menu label {
   position: absolute;
   font-size: 2em;
   z-index: 1;
   color: #05a8f5;
-  left: 20%;
-  top: 15%;
+  left: 20px;
+  top: 20px;
   cursor: pointer;
-  transition: 0.2s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 .burgur-menu .open {
   visibility: visible;
@@ -45,7 +45,7 @@ input:checked ~ .nav-wrap {
   width: 5000px;
   height: 5000px;
 }
-input:checked ~ .nav-wrap > * {
+input:checked ~ .nav-wrap > .nav > * {
   visibility: visible;
   opacity: 1;
   transition-delay: 0s;
@@ -56,20 +56,46 @@ input:checked ~ .open {
   opacity: 0;
 }
 input:checked ~ .close {
-  animation: closing 0.2s linear;
+  transform: rotate(360deg);
   visibility: visible;
   opacity: 1;
 }
 .nav {
   font-weight: bold;
-  color: #05a8f5;
-  padding-left: 50px;
   margin-top: 80px;
-  visibility: hidden;
-  opacity: 0;
-  transition-delay: 0.5s;
+  width: 4%;
 }
 .nav li {
-  margin-bottom: 40px;
   display: block;
+  margin-bottom: 20px;
+  transition-delay: 0.4s;
+  visibility: hidden;
+  opacity: 0;
+}
+.nav li a {
+  display: block;
+  padding: 5px 0px 5px 50px;
+  cursor: pointer;
+  color: #05a8f5;
+  user-select: none;
+}
+li a:focus {
+  background: #eee;
+  color: #414141;
+}
+.title {
+  position: absolute;
+  right: 20%;
+  color: #fff;
+  top: calc(50% - 57px);
+}
+.title .title-inner h1 {
+  margin-bottom: 30px;
+  font-size: 3rem;
+}
+.title .title-inner p {
+  font-size: 1.6rem;
+}
+.title .title-inner span {
+  font-size: 1rem;
 }
